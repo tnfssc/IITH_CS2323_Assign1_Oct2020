@@ -15,8 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: make
       run: make
-    - name: make Assembly
-      run: make Assembly
+    - name: make Assembler
+      run: make Assembler
     - name: run Assembler prog1.asm
       run: ./bin/Assembler sample_data/prog1.asm
     - name: make ConvertAssembly
