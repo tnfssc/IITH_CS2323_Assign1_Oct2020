@@ -7,12 +7,12 @@
 using namespace std;
 
 int main () {
-    cout << "Initializing...";
+    cout << "Initializing...\n";
     auto start = chrono::high_resolution_clock::now();
     JSObject addr = addrGen();
     JSObject opcode = opcodeGen();
     auto stop = chrono::high_resolution_clock::now();
-    cout << "Initailized. Took " << (start - stop).count() << " microseconds!";
+    cout << "Initailized. Took " << (stop - start).count() << " microseconds!\n";
 
     string prog_line = "addi $s0, $zero, 10";
     return 0;

@@ -1,5 +1,7 @@
-#include <iostream>
+#include<iostream>
+
 #include "opcode_type.hpp"
+#include "../tables/opcode_gen.hpp"
 
 using namespace std;
 
