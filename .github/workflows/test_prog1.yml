@@ -13,8 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: make main
+      run: make main
     - name: make Assembler
       run: make Assembler
     - name: run Assembler prog1.asm
