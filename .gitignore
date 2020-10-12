@@ -1,6 +1,6 @@
 *.out
 *.exe
-output/*
+output
 .idea
 .vscode
 *.o

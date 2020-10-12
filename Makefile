@@ -7,9 +7,10 @@ ConvertAssembly: ConvertAssembly.o
 	g++ common/*.o ConvertAssembly/*.o -o bin/ConvertAssembly
 
 main:
-	mkdir Assembler
-	mkdir common
-	mkdir ConvertAssembly
+	mkdir -p Assembler
+	mkdir -p common
+	mkdir -p ConvertAssembly
+	mkdir -p output
 
 	g++ -c tables/addr_gen.cpp -o Assembler/addr_gen.o
 	g++ -c tables/opcode_gen.cpp -o Assembler/opcode_gen.o
@@ -21,6 +22,6 @@ main:
 	g++ -c ConvertAssembly.cpp -o ConvertAssembly/ConvertAssembly.o
 
 clean:
-	rm -f -rf *.o bin
+	rm -f -rf *.o bin Assembler ConvertAssembly common output
 	rm -f -rf */*.o
 	rm -f -rf */*.o
