@@ -14,9 +14,13 @@ main:
 
 	g++ -c tables/addr_gen.cpp -o Assembler/addr_gen.o
 	g++ -c tables/opcode_gen.cpp -o Assembler/opcode_gen.o
+	g++ -c tables/format_gen.cpp -o Assembler/format_gen.o
+	g++ -c tables/funct_gen.cpp -o Assembler/funct_gen.o
 
 	g++ -c functions/split_string.cpp -o common/split_string.o
 	g++ -c functions/opcode_type.cpp -o Assembler/opcode_type.o
+	g++ -c functions/funct_type.cpp -o Assembler/funct_type.o
+	g++ -c functions/format_type.cpp -o Assembler/format_type.o
 
 	g++ -c Assembler.cpp -o Assembler/Assembler.o
 	g++ -c ConvertAssembly.cpp -o ConvertAssembly/ConvertAssembly.o

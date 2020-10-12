@@ -2,11 +2,9 @@
 #define OPCODE_GEN_HPP
 
 #include <iostream>
-#include <unordered_map>
+#include "../types/JSObject.hpp"
 
 using namespace std;
-
-typedef unordered_map<string, string> JSObject;
 
 JSObject opcodeGen();
 
