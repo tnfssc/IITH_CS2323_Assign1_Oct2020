@@ -1,8 +1,9 @@
-#include<iostream>
-#include<unordered_map>
+#include <iostream>
+#include <unordered_map>
 #include "addr_gen.hpp"
 
-JSObject addrGen () {
+JSObject addrGen()
+{
     JSObject result;
     result["zero"] = "00000";
     result["at"] = "00001";
@@ -36,6 +37,6 @@ JSObject addrGen () {
     result["sp"] = "11101";
     result["fp"] = "11110";
     result["ra"] = "11111";
-    
+
     return result;
 }

@@ -1,19 +1,18 @@
-#include<iostream>
-#include<chrono> 
+#include <iostream>
+#include <chrono>
 
-#include "tables/addr_gen.hpp"
-#include "tables/opcode_gen.hpp"
+#include "functions/opcode_type.hpp"
 
 using namespace std;
 
-int main () {
-    cout << "Initializing...\n";
+int main()
+{
     auto start = chrono::high_resolution_clock::now();
-    JSObject addr = addrGen();
-    JSObject opcode = opcodeGen();
-    auto stop = chrono::high_resolution_clock::now();
-    cout << "Initailized. Took " << (stop - start).count() << " microseconds!\n";
 
     string prog_line = "addi $s0, $zero, 10";
+    auto opcode = opcode_of(prog_line);
+
+    auto stop = chrono::high_resolution_clock::now();
+    cout << "\nTook " << (stop - start).count() << " microseconds!\n";
     return 0;
 }

@@ -2,26 +2,25 @@ name: Make and test prog1
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: make main
-      run: make main
-    - name: make Assembler
-      run: make Assembler
-    - name: run Assembler prog1.asm
-      run: ./bin/Assembler sample_data/prog1.asm
-    - name: make ConvertAssembly
-      run: make ConvertAssembly
-    - name: run ConvertAssembly prog1.asm
-      run: ./bin/ConvertAssembly output/prog1bin.txt
-    - name: make clean
-      run: make clean
+      - uses: actions/checkout@v2
+      - name: make main
+        run: make main
+      - name: make Assembler
+        run: make Assembler
+      - name: run Assembler prog1.asm
+        run: ./bin/Assembler sample_data/prog1.asm
+      - name: make ConvertAssembly
+        run: make ConvertAssembly
+      - name: run ConvertAssembly prog1.asm
+        run: ./bin/ConvertAssembly output/prog1bin.txt
+      - name: make clean
+        run: make clean

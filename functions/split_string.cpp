@@ -1,18 +1,26 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-void split_string(const string& s, char c, vector<string>& v) {
-    string::size_type i = 0;
-    string::size_type j = s.find(c);
-
-    while (j != string::npos) {
-        v.push_back(s.substr(i, j-i));
-        i = ++j;
-        j = s.find(c, j);
-
-        if (j == string::npos)
-            v.push_back(s.substr(i, s.length()));
+vector<string> split_string(string str, string token)
+{
+    vector<string> result;
+    while (str.size())
+    {
+        int index = str.find(token);
+        if (index != string::npos)
+        {
+            result.push_back(str.substr(0, index));
+            str = str.substr(index + token.size());
+            if (str.size() == 0)
+                result.push_back(str);
+        }
+        else
+        {
+            result.push_back(str);
+            str = "";
+        }
     }
+    return result;
 }

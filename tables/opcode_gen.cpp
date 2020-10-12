@@ -1,8 +1,9 @@
-#include<iostream>
-#include<unordered_map>
+#include <iostream>
+#include <unordered_map>
 #include "opcode_gen.hpp"
 
-JSObject opcodeGen () {
+JSObject opcodeGen()
+{
     JSObject result;
     result["add"] = "000000";
     result["sub"] = "000000";

@@ -8,6 +8,6 @@ using namespace std;
 
 typedef unordered_map<string, string> JSObject;
 
-JSObject addrGen ();
+JSObject addrGen();
 
 #endif

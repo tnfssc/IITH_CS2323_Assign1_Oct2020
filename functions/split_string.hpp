@@ -2,10 +2,10 @@
 #define STRING_SPLIT_HPP
 
 #include <iostream>
-#include<vector>
+#include <vector>
 
 using namespace std;
 
-string string_split (const string& s, char c, vector<string>& v);
+vector<string> split_string(string str, string token);
 
 #endif
