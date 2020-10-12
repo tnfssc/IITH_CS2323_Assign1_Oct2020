@@ -1,3 +1,7 @@
 *.out
 *.exe
 output/*
+.idea
+.vscode
+*.o
+bin
