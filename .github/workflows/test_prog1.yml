@@ -1,4 +1,4 @@
-name: Make and test
+name: Make and test prog1
 
 on:
   push:
@@ -7,12 +7,14 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  Build and Test:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
+    - name: make
+      run: make
     - name: make Assembly
       run: make Assembly
     - name: run Assembler prog1.asm
@@ -23,4 +25,3 @@ jobs:
       run: ./bin/ConvertAssembly output/prog1bin.txt
     - name: make clean
       run: make clean
-      
