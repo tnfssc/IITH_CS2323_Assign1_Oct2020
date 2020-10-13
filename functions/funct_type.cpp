@@ -8,7 +8,7 @@ using namespace std;
 
 JSObject funct_table = functGen();
 
-JSObject addr_reverseGen()
+JSObject funct_reverseGen()
 {
     JSObject reverseMap;
     for (auto it = funct_table.begin(); it != funct_table.end(); it++)
@@ -16,7 +16,7 @@ JSObject addr_reverseGen()
     return reverseMap;
 }
 
-JSObject funct_reverse_table = addr_reverseGen();
+JSObject funct_reverse_table = funct_reverseGen();
 
 string funct_of(string MNEMONIC)
 {

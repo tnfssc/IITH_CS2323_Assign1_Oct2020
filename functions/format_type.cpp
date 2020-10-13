@@ -16,7 +16,7 @@ JSObject format_reverseGen()
     return reverseMap;
 }
 
-JSObject funct_reverse_table = format_reverseGen();
+JSObject format_reverse_table = format_reverseGen();
 
 string format_of(string MNEMONIC)
 {

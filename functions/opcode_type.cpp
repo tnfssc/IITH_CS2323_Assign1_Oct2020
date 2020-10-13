@@ -8,7 +8,7 @@ using namespace std;
 
 JSObject opcode_table = opcodeGen();
 
-JSObject addr_reverseGen()
+JSObject opcode_reverseGen()
 {
     JSObject reverseMap;
     for (auto it = opcode_table.begin(); it != opcode_table.end(); it++)
@@ -16,7 +16,7 @@ JSObject addr_reverseGen()
     return reverseMap;
 }
 
-JSObject opcode_reverse_table = addr_reverseGen();
+JSObject opcode_reverse_table = opcode_reverseGen();
 
 string opcode_of(string MNEMONIC)
 {

@@ -5,13 +5,15 @@
 #include <fstream>
 
 #include "functions/split_string.hpp"
+#include "functions/format_type.hpp"
 
 using namespace std;
 
 string generate_asm_code(string prog_line)
 {
     string opcode = prog_line.substr(0, 6);
-    cout << opcode << endl;
+    string format = format_of(opcode);
+    cout << opcode << format << endl;
     return "TODO";
 }
 
