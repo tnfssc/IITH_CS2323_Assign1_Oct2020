@@ -10,7 +10,9 @@ using namespace std;
 
 string generate_asm_code(string prog_line)
 {
-    return "Cool!";
+    string opcode = prog_line.substr(0, 6);
+    cout << opcode << endl;
+    return "TODO";
 }
 
 int main(int argc, char *argv[])

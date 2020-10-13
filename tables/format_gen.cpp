@@ -39,5 +39,18 @@ JSObject formatGen()
     result["j"] = "J";
     result["jal"] = "J";
 
+    result["000000"] = "R";
+    result["001000"] = "I";
+    result["001001"] = "I";
+    result["000100"] = "I";
+    result["000101"] = "I";
+    result["011000"] = "I";
+    result["011001"] = "I";
+    result["010111"] = "I";
+    result["011100"] = "I";
+    result["011101"] = "I";
+    result["000010"] = "J";
+    result["000011"] = "J";
+
     return result;
 }

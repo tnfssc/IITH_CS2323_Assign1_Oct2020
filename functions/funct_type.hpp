@@ -6,5 +6,6 @@
 using namespace std;
 
 string funct_of(string prog_line);
+string funct_reverse_of(string prog_line);
 
 #endif

@@ -6,5 +6,6 @@
 using namespace std;
 
 string addr_of(string prog_line);
+string addr_reverse_of(string prog_line);
 
 #endif

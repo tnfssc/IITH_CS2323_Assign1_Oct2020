@@ -6,5 +6,6 @@
 using namespace std;
 
 string format_of(string prog_line);
+string format_reverse_of(string prog_line);
 
 #endif

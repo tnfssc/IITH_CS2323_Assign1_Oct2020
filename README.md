@@ -1,6 +1,6 @@
 # README
 ## CS2323 Assign1, IITH
-> ES18BTECH11016 | Sharath Chandra
+> ES18BTECH11016 | Sharath | [GitHub/tnfssc/Assign1](https://github.com/tnfssc/IITH_CS2323_Assign1_Oct2020)
 
 _You will need `make` and `g++` with standard template library to compile and run this program_
 
