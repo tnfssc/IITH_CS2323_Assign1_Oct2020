@@ -25,5 +25,5 @@ string opcode_of(string MNEMONIC)
 
 string opcode_reverse_of(string MNEMONIC)
 {
-    return opcode_table[MNEMONIC];
+    return opcode_reverse_table[MNEMONIC];
 }

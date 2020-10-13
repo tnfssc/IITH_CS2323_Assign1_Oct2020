@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -88,4 +90,15 @@ int decimalToBinary(int N)
     }
 
     return B_Number;
+}
+
+string binaryToDecimalStrings(string bin)
+{
+    const string s = bin;
+    unsigned long long value = stoull(s, 0, 2);
+    string number;
+    stringstream strstream;
+    strstream << value;
+    strstream >> number;
+    return number;
 }

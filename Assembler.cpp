@@ -48,8 +48,8 @@ string generate_R_type(string prog_line, string format)
         }
 
         result.replace(0, 5, sstring[1]);
-        result.replace(6, 10, sstring[2]);
-        result.replace(11, 15, sstring[0]);
+        result.replace(6, 5, sstring[2]);
+        result.replace(11, 5, sstring[0]);
     }
     else if (sstring.size() == 2)
     {
@@ -67,7 +67,7 @@ string generate_R_type(string prog_line, string format)
         }
 
         result.replace(0, 5, sstring[0]);
-        result.replace(6, 10, sstring[1]);
+        result.replace(6, 5, sstring[1]);
     }
     else
         return "error";

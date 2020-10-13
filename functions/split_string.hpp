@@ -11,5 +11,6 @@ string trim_string(string &str);
 string bin2hex(const string &input);
 string hex2bin(const string &input);
 int decimalToBinary(int N);
+string binaryToDecimalStrings(string bin);
 
 #endif

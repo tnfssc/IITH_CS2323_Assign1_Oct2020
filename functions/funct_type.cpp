@@ -25,5 +25,5 @@ string funct_of(string MNEMONIC)
 
 string funct_reverse_of(string MNEMONIC)
 {
-    return funct_table[MNEMONIC];
+    return funct_reverse_table[MNEMONIC];
 }

@@ -25,5 +25,5 @@ string addr_of(string MNEMONIC)
 
 string addr_reverse_of(string MNEMONIC)
 {
-    return addr_table[MNEMONIC];
+    return addr_reverse_table[MNEMONIC];
 }

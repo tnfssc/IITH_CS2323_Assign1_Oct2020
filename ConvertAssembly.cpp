@@ -6,15 +6,43 @@
 
 #include "functions/split_string.hpp"
 #include "functions/format_type.hpp"
+#include "functions/funct_type.hpp"
+#include "functions/addr_type.hpp"
+#include "functions/opcode_type.hpp"
 
 using namespace std;
 
 string generate_asm_code(string prog_line)
 {
+    string result;
     string opcode = prog_line.substr(0, 6);
     string format = format_of(opcode);
-    cout << opcode << format << endl;
-    return "TODO";
+    if (format.compare("R") == 0)
+    {
+        string funct = prog_line.substr(27, 6);
+        result.append(funct_reverse_of(funct));
+        result.append(" ");
+        result.append(addr_reverse_of(prog_line.substr(6 + 11, 5)));
+        result.append(", ");
+        result.append(addr_reverse_of(prog_line.substr(6 + 0, 5)));
+        result.append(", ");
+        result.append(addr_reverse_of(prog_line.substr(6 + 6, 5)));
+    }
+    else if (format.compare("I") == 0)
+    {
+        result = "TODO";
+    }
+    else if (format.compare("J") == 0)
+    {
+        string funct = prog_line.substr(0, 6);
+        result.append(opcode_reverse_of(funct));
+        result.append(" ");
+        string label = prog_line.substr(6);
+        result.append(binaryToDecimalStrings(label));
+    }
+    else
+        return "error";
+    return result;
 }
 
 int main(int argc, char *argv[])

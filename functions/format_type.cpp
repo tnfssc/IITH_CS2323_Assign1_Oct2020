@@ -25,5 +25,5 @@ string format_of(string MNEMONIC)
 
 string format_reverse_of(string MNEMONIC)
 {
-    return format_table[MNEMONIC];
+    return format_reverse_table[MNEMONIC];
 }
