@@ -21,6 +21,7 @@ main:
 	g++ -c functions/opcode_type.cpp -o Assembler/opcode_type.o
 	g++ -c functions/funct_type.cpp -o Assembler/funct_type.o
 	g++ -c functions/format_type.cpp -o Assembler/format_type.o
+	g++ -c functions/addr_type.cpp -o Assembler/addr_type.o
 
 	g++ -c Assembler.cpp -o Assembler/Assembler.o
 	g++ -c ConvertAssembly.cpp -o ConvertAssembly/ConvertAssembly.o

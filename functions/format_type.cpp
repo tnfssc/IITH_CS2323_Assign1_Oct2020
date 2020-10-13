@@ -6,8 +6,9 @@
 
 using namespace std;
 
+JSObject format_table = formatGen();
+
 string format_of(string MNEMONIC)
 {
-    JSObject table = formatGen();
-    return table[MNEMONIC];
+    return format_table[MNEMONIC];
 }

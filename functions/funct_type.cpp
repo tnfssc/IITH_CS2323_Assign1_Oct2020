@@ -6,8 +6,9 @@
 
 using namespace std;
 
+JSObject funct_table = functGen();
+
 string funct_of(string MNEMONIC)
 {
-    JSObject table = functGen();
-    return table[MNEMONIC];
+    return funct_table[MNEMONIC];
 }

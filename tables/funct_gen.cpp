@@ -36,8 +36,5 @@ JSObject functGen()
     result["sb"] = "101000";
     result["sh"] = "101001";
 
-    result["j"] = "000010";
-    result["jal"] = "000011";
-
     return result;
 }

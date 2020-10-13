@@ -6,8 +6,9 @@
 
 using namespace std;
 
+JSObject opcode_table = opcodeGen();
+
 string opcode_of(string MNEMONIC)
 {
-    JSObject table = opcodeGen();
-    return table[MNEMONIC];
+    return opcode_table[MNEMONIC];
 }
