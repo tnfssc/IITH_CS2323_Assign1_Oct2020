@@ -41,5 +41,8 @@ JSObject opcodeGen()
     result["ldc1"] = "100011";
     result["swc1"] = "100111";
 
+    result["j"] = "000010";
+    result["jal"] = "000011";
+
     return result;
 }

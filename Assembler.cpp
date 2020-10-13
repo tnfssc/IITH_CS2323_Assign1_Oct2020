@@ -3,6 +3,7 @@
 #include <string>
 #include <chrono>
 #include <fstream>
+#include <sstream> // for string streams
 
 #include "types/JSObject.hpp"
 
@@ -31,19 +32,45 @@ string generate_R_type(string prog_line, string format)
 {
     string result = "00000000000000000000";
     vector<string> sstring = split_string(prog_line, ",");
-    for (int i = 0; i < sstring.size(); i++)
-    {
-        sstring[i] = addr_of(trim_string(sstring[i]));
-    }
-
-    // TODO More rules for other R types to be added
-
     if (sstring.size() > 2)
     {
+        for (int i = 0; i < sstring.size(); i++)
+        {
+            string code = addr_of(trim_string(sstring[i]));
+            if (code.compare("") == 0)
+            {
+                ostringstream str1;
+                str1 << decimalToBinary(stoi(trim_string(sstring[i])));
+                sstring[i] = str1.str();
+            }
+            else
+                sstring[i] = code;
+        }
+
         result.replace(0, 5, sstring[1]);
         result.replace(6, 10, sstring[2]);
         result.replace(11, 15, sstring[0]);
     }
+    else if (sstring.size() == 2)
+    {
+        for (int i = 0; i < sstring.size(); i++)
+        {
+            string code = addr_of(trim_string(sstring[i]));
+            if (code.compare("") == 0)
+            {
+                ostringstream str1;
+                str1 << decimalToBinary(stoi(trim_string(sstring[i])));
+                sstring[i] = str1.str();
+            }
+            else
+                sstring[i] = code;
+        }
+
+        result.replace(0, 5, sstring[0]);
+        result.replace(6, 10, sstring[1]);
+    }
+    else
+        return "error";
     return result;
 }
 
@@ -66,9 +93,22 @@ string generate_binary_code(string prog_line)
     }
     else if (format.compare("I") == 0)
     {
-        //
+        // TODO
+        return "TODO";
     }
+    else if (format.compare("J") == 0)
+    {
+        size_t MNEMONIC_end_pos = prog_line.find(" ");
+        ostringstream str1;
+        string code = prog_line.substr(MNEMONIC_end_pos + 1, prog_line.size());
+        vector<string> sstring = split_string(code, ",");
 
+        str1 << decimalToBinary(stoi(trim_string(sstring[1])));
+        string bincode = str1.str();
+        result.replace(32 - (bincode.size() - 1), 31, bincode);
+    }
+    else
+        return "error";
     return result;
 }
 
@@ -89,7 +129,7 @@ int main(int argc, char *argv[])
         {
             string bin = generate_binary_code(prog_line);
             output_file << bin << " (" << bin2hex(bin) << ", " << prog_line << ")" << endl;
-            // cout << bin << " (" << bin2hex(bin) << ", " << prog_line << ")" << endl;
+            cout << bin << " (" << bin2hex(bin) << ", " << prog_line << ")" << endl;
         }
         input_file.close();
         output_file.close();

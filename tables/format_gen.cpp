@@ -36,5 +36,8 @@ JSObject formatGen()
     result["sb"] = "I";
     result["sh"] = "I";
 
+    result["j"] = "J";
+    result["jal"] = "J";
+
     return result;
 }

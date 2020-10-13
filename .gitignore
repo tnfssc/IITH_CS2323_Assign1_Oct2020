@@ -8,4 +8,4 @@ bin
 Assembler
 ConvertAssembly
 common
-run.sh
+run*.sh
